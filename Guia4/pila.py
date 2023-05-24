@@ -4,11 +4,11 @@ class Pila:
         self.pila = []
 
     def Apilar(self, dato):
-        self.pila.append()
+        self.pila.append(dato)
 
     def Desapilar(self):
         if not self.esta_vacia():
-            return self.pila.pop
+            return self.pila.pop()
         else:
             return None
         
