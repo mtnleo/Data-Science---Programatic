@@ -13,7 +13,7 @@ class Pila:
             return None
         
     def esta_vacia(self):
-        return True if len(self.pila) else False
+        return False if len(self.pila) > 0 else True
     
     def mostrar_pila(self):
         for elemento in self.pila:
