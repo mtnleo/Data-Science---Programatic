@@ -36,6 +36,41 @@ if __name__ == "__main__":
             print("Seleccionar todos los pokemones con una Speed de 10 o menos")
             print("Hay ", df.loc[df["Speed"] <= 10].shape[0], " pokemones con esas caracteristicas:")
             print(df.loc[df["Speed"] <= 10])
+
+        case 3:
+            print("Cuántos pokemones tienen un 'Sp. Def' de 25 o menos?")
+            print("Hay", df.loc[df["Sp. Def"] <= 25].shape[0], "con un Sp. Def de 25 o menos")
+            print("Algunos de ellos: ")
+            print(df.loc[df["Sp. Def"] <= 25])
+
+        case 4:
+            print("Seleccionar todos los pokemones legendarios (Legendary)")
+            print("Hay", df.loc[df["Legendary"]].shape[0], "pokemones legendarios en el dataframe.")
+            print("Algunos de ellos son:\n ", df.loc[df["Legendary"]])
+
+        case 5:
+            print("Encontrar el outlier raro: VER")    
+            # don't have the picture lol
+
+        case 6:
+            print("Cuántos pokemones de tipo Fire y Flying hay?")   
+            df_fire_flying = df.loc[(df['Type 1'] == 'Fire') & (df['Type 2'] == 'Flying')]
+            print("Hay", df_fire_flying.shape[0], "de pokemones tipo fuego y volador.")
+            print("Algunos de ellos:\n", df_fire_flying)
+
+        case 7:
+            print("Cuántos pokemones 'Poison' hay entre ambos tipos?")
+            df_poison = df.loc[(df["Type 1"] == "Poison") | (df["Type 2"] == "Poison")]
+            print("Hay", df_poison.shape[0], "Pokemones de tipo Veneno.")
+            print("Son estos:\n", df_poison.to_string())
+
+        case 8:
+            print("Qué pokemon de tipo 1 'Ice' tiene la mejor defensa?") 
+            df_ice = df.loc[df["Type 1"] == "Ice"].sort_values(by="Defense", ascending=False)
+            print("Es este:\n", df_ice.iloc[0].to_string())
+
+
+
         
         case _:
             print("Seleccione una opcion adecuada")
